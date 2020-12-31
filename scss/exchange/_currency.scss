@@ -1,0 +1,148 @@
+.currency{    
+    
+    .table{
+        @include table-grid;
+        height: 100%;        
+        background: $color-white;
+        border: 1px solid black;
+        border-radius: 8px; 
+        font-size: 1.8rem;
+        justify-items: center; 
+        overflow: hidden;        
+        
+        .col{
+            list-style: none;
+            width: 100%;          
+        }
+        
+        .col li{    
+            display: block;
+            width: 100%;
+            height: 64px;          
+        }
+        
+        [class*="col-"]:not(:first-child){
+            text-align: center;
+        }
+        
+        .col li{
+            padding-top: 15px;
+        }
+        
+        .col li:first-child{
+            font-size: 2rem;
+            background: $color-red;
+            color: $color-white;            
+        }
+        
+        .col li:nth-child(even){
+            background: $color-gray;
+        }
+        
+        .col li:nth-child(even):not(:last-child){
+            border-top: 1px solid darken($color-gray, 10%);
+            border-bottom: 1px solid darken($color-gray, 10%); 
+        }
+        
+        .col li:last-child{
+            border-top: 1px solid darken($color-gray, 10%);
+        }
+        
+        .col-1 li{
+            padding-left: 50px;          
+        }      
+        
+        .col-1 li:nth-child(13){            
+            line-height: 1;
+        }
+
+        .col-2{
+            grid-column: 2/3;
+        }        
+
+        .col-3{
+            grid-column: 3/4;
+        }
+
+        .col-4{
+            grid-column: 4/5;
+        }
+
+        .col-5{
+            grid-column: 5/6;
+        }
+
+        .col-6{
+            grid-column: 6/7;
+        }
+
+        .col-7{
+            grid-column: 7/8;
+        }
+    }    
+}
+
+
+
+// MEDIA QUERIES
+
+.currency{      
+
+    .table{
+        @include respond (desk-small){             
+            bottom: 0rem;
+            left: 0rem;               
+        }
+
+        @include respond (phone-small){
+            font-size: 1.5rem;
+        }       
+        
+        .col li{    
+            @include respond (desk-small){             
+                height: 60px;    
+            }
+
+            @include respond (tab-port){             
+                height: 55px;    
+            }
+
+            @include respond (phone){             
+                height: 50px;    
+            }
+
+            @include respond (phone-small){
+                height: 45px;                
+            }
+        }        
+        
+        .col li:first-child{            
+            @include respond (phone){             
+                line-height: 1;    
+            }
+        }
+
+        .col-1 li{
+            @include respond (tab-small){                             
+                padding-left: 15px;   
+            }
+
+            @include respond (phone){                             
+                padding-left: 10px;   
+            }
+        }
+
+        .col-1 li:nth-child(4){
+            @include respond (desk-small){                             
+                line-height: 1;  
+            }          
+        }    
+
+        .col-2 li:nth-child(1){
+            @include respond (tab-small){                             
+                line-height: 1;  
+            }                      
+        }       
+    }    
+}
+

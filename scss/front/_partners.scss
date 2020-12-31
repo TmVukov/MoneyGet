@@ -1,0 +1,71 @@
+.partners{    
+    @include grid;
+    background: url(../img/overlay-05@2x.png)  0%/contain no-repeat;    
+
+    &__left{
+        @include left;        
+    }
+
+    &__right{
+        @include right;
+    }
+
+    & h2{
+        @include h2;       
+    }
+
+    & p{
+        font-size: 2.8rem;        
+        line-height: 4.8rem;
+        color: $color-gray-dark;       
+    }
+
+    & p:not(:last-child){
+        margin-bottom: 4rem;
+    }
+    
+    & .btn{
+        border: 1px solid $color-red;
+    }        
+}
+
+
+// MEDIA QUERIES
+
+.partners{
+
+    @include respond (desk-small){        
+        display: grid;
+        grid-template-columns: 50% 50%;
+        padding: 15rem 6rem;
+    }
+
+    @media(max-width: 1210px){
+        background: url(../img/overlay-05@2x.png)  center/cover no-repeat;  
+    }
+    
+
+    @include respond (tab-port){                
+        display: flex;
+        flex-direction: column;        
+        padding: 6rem 6rem 9rem;;       
+    }
+
+    &__left{
+        @include respond (desk-small){        
+            grid-column: 1/2;
+        }
+    }   
+
+    & h2{
+        @include respond (tab-port){             
+            margin-bottom: 3rem;      
+        }
+    }
+
+    & p{        
+        @include respond (desk-small){        
+            font-size: 2rem;
+        }
+    }        
+}

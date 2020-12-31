@@ -1,0 +1,207 @@
+.atm{    
+    background: url(../img/overlay-08.png)  left no-repeat, $color-black;
+    display: flex;
+    flex-direction: column; 
+    height: 80rem;  
+    
+
+    &__top{
+        display: flex;         
+        align-items: center;
+        justify-content: space-between;
+        padding: 5rem 26.4rem;        
+
+        &-left{
+            display: flex;          
+        }
+    }
+    
+    &__bottom{        
+        border-top: 1px solid darken($color-gray, 30%);
+        color: $color-white;
+        padding: 2rem 26.4rem;       
+    } 
+    
+    & h1{ 
+        font-size: 6rem;
+        line-height: 1.2;           
+        color: $color-white;        
+    }
+
+    & .spot__icon{                                             
+        margin-right: 4rem; 
+        transform: scale(.9);
+        height: 140px;      
+    }
+
+    & .spot__icon-middle{
+        display: none;       
+    }
+
+    & span{
+        font-size: 2.4rem;
+        text-transform: uppercase;        
+    }
+
+    &__list{
+        list-style: none;
+        border-bottom: 1px solid darken($color-gray, 50%);        
+    }
+
+    &__item{
+        display: inline-block;
+        margin-right: 4rem;        
+    }
+
+    &__link{
+        display: inherit;
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: darken($color-gray, 50%);
+        text-decoration: none;
+    }
+
+    &__link:hover{
+        color:$color-white;
+        border-bottom: 4px solid $color-white;
+    }
+}
+
+
+// MEDIA QUERIES
+
+.atm{    
+    @include respond (desk-small){
+        height: 55rem;
+    }
+
+    @include respond (tab-small){
+        height: 80rem;
+    }
+   
+
+    &__top{        
+        @include respond (desk-small){        
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-column-gap: 5rem;            
+            justify-items: center;            
+            padding: 5rem;
+        }
+        
+        @include respond (tab-port){
+            justify-items: flex-start;
+            padding: 3rem 5rem;
+        }
+
+        @include respond (tab-small){
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 3rem;            
+        }
+        
+        &-left{            
+            @include respond (desk-small){ 
+                grid-column: 1/2;
+            }
+            
+            @include respond(tab-port){
+                display: flex;
+                align-items: center;                              
+            }
+            
+            @include respond(tab-small){
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;                              
+            }
+        }
+
+        & .box{
+            @include respond (desk-small){ 
+                grid-column: 2/3;                
+            } 
+        }
+    }
+    
+    &__bottom{         
+        @include respond (desk-small){
+            display: block;                        
+            padding: 3rem;        
+        }
+        
+        &-right,
+        &-left{
+            @include respond (phone){
+                padding: 0;
+                margin-top: 3rem;                
+            }
+        }
+
+        &-right{
+            @include respond (desk-small){ 
+                grid-column: 2/3;                
+            }
+        }
+
+        &-left{
+            @include respond (desk-small){                
+                border: none;                
+            }
+        }
+    }  
+       
+
+    & h1{       
+        @include respond (tab-port){
+            font-size: 5rem;
+            margin: 2rem 0;
+        }
+    }
+
+    & .spot__icon{
+        @include respond (desk-small){
+            margin-right: 2rem;                
+        }
+
+        @include respond (tab-port){
+            display: none;                
+        }       
+    }
+
+    & .spot__icon-middle{
+        @include respond (tab-port){
+            display: block;
+            width: 70px;
+            height: 70px;
+            margin-right: 3rem;                
+        }        
+    }    
+
+    & span{
+        @include respond (desk-small){
+            display: block;
+        }
+        
+        @include respond (phone){
+            font-size: 3rem;
+        }
+    }
+    
+    &__list{       
+        @include respond(desk-small){
+            display: inline-block;
+        }
+    }
+
+    & select{        
+        @include respond (desk-small){
+            max-width: 40rem;
+            min-width: 30rem;
+        }
+    }    
+}
+
+
+

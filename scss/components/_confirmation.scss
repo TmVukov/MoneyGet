@@ -1,0 +1,74 @@
+.confirmation{
+    height: 108rem;        
+    background: url(../img/overlay-09.png) left/cover no-repeat, $color-white;   
+    
+
+    &__top{
+        display: flex;
+        justify-content: space-between;
+        padding: 8rem 26.4rem 0;
+       
+
+        h3{              
+            display: flex;
+            align-items: center;
+            color: $color-black;
+            font-size: 3.4rem;       
+        }
+    
+        h3::before{
+            content: url(../img/chat.png);                             
+            margin-right: 2rem; 
+            height: 74px;                         
+        }        
+    }
+
+    &__middle{
+        padding: 8rem 26.4rem;
+
+        h1{
+            font-size: 4.8rem;
+            color: $color-red;
+        }
+
+        h2{
+            font-size: 4.8rem;
+            color: $color-black;
+            font-weight: 400;
+        }
+    }
+
+
+
+    &__bottom{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 35rem;
+        padding: 8rem 26.4rem;
+
+        & a{
+            all: unset;         
+            border: 1px solid $color-red;
+            border-radius: 4px;
+            padding: 1rem 8rem;        
+            font-size: 2.4rem;
+            font-weight: 700;                
+            text-transform: uppercase;
+            color: $color-black;
+            cursor: pointer;
+            transition: all .2s;         
+        }                
+            
+        & a:hover{        
+            background: $color-red;
+            color: $color-white;                    
+        }
+        
+        & img{
+            height: 100%;                
+        }
+    }
+}
+
+

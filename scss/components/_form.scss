@@ -1,0 +1,245 @@
+.submit{
+    height: 108rem;        
+    background: url(../img/overlay-09.png) left no-repeat, $color-white;    
+    
+
+    &__top{
+        display: flex;
+        justify-content: space-between;
+        padding: 8rem 26.4rem 0;       
+       
+        &-left{
+            display: flex;
+            align-items: center;            
+
+            h3{            
+                color: $color-black;
+                font-size: 3.4rem;       
+            }
+        
+            .chat__icon{                                         
+                margin-right: 2rem; 
+                height: 74px;               
+            }
+            
+            .chat__icon-small{
+                display:none;               
+            }
+        }       
+    }
+
+    .form{
+        padding: 8rem 26.4rem;        
+
+        &__top{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;             
+
+            input{                
+                flex: 1 0 30%;
+                font-size: 2.8rem;                
+                font-family: inherit;
+                background: none;
+                border: none;
+                border-bottom: 1px solid $color-gray;         
+            }
+
+            input:not(:last-child){
+                margin-bottom: 15rem;              
+            }
+
+            input:nth-child(even){
+                margin-left: 14rem;               
+            }
+
+            input:focus{
+                outline: none;                               
+            } 
+            
+            input:focus:invalid{
+                border-bottom: 1px solid $color-red;
+            }      
+        }
+
+
+        &__middle{            
+            display: flex;
+            margin-top: 7rem;
+            
+            input {
+                opacity: 0;                
+            }
+
+            label{
+                padding-left: 2rem;
+                font-size: 1.2rem;
+                text-align: justify;
+                position: relative;               
+            } 
+            
+            span{                
+                width: 1.5rem;
+                height: 1.5rem;                
+                position: absolute;
+                top: 0;
+                left: 0;
+                border: 1px solid $color-gray;
+                border-radius: 50%;
+                cursor: pointer;             
+            }
+
+            span::after{
+                content: "";
+                display: none;
+                height: .5rem;
+                width: .5rem;
+                border-radius: 50%;
+                background: $color-red;
+                position: absolute;
+                top: .4rem;
+                left: .4rem;    
+            }
+
+            span:hover{
+                border: 1px solid darken($color-gray, 30%); 
+            }
+
+            input:checked + label span::after{
+                display: block;
+            }
+
+        }        
+        
+
+        &__bottom{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 7rem;
+            
+            & button{
+                all: unset;         
+                border: 1px solid $color-red;
+                border-radius: 4px;
+                padding: 1rem 8rem;        
+                font-size: 2.4rem;
+                font-weight: 700;                
+                text-transform: uppercase;
+                color: $color-black;
+                transition: all .2s;                
+            }                
+                
+            & button:hover{        
+                background: $color-red;
+                color: $color-white;                    
+            }
+            
+            & img{
+                height: 100%;                
+            }
+        }
+    }   
+}
+
+
+
+// MEDIA QUERIES
+
+.submit{
+    &__top{        
+        @include respond (desk-small){                       
+            padding: 10rem;
+        }
+
+        @include respond (phone){                                            
+            padding: 3rem;
+            margin-bottom: 5rem;
+        }
+       
+        &-left{
+            @include respond (phone){ 
+                display: block;               
+            }          
+        
+            .chat__icon{                
+                @include respond (tab-small){ 
+                    display: none;
+                }
+            }
+            
+            .chat__icon-small{
+                @include respond (tab-small){ 
+                    display: block;
+                    margin-right: 2rem;
+                }
+            }
+        }       
+    }
+
+    .form{
+        @include respond (desk-small){                       
+            padding: 10rem;
+        }        
+
+        @include respond (phone){                       
+            padding: 3rem;
+        }
+
+        &__top{
+            @include respond (tab-small){ 
+                flex-direction: column;               
+            }            
+
+            input:not(:last-child){
+                @include respond (phone){ 
+                    margin-bottom: 10rem;                   
+                }
+            }
+
+            input:nth-child(even){               
+                @include respond (tab-small){ 
+                    margin-left: 0;                   
+                }
+            }             
+        }
+
+
+        &__middle{
+            label{                
+                @include respond (phone){ 
+                    font-size: 1.5rem;
+                    padding-left: 4rem;                   
+                }
+            } 
+            
+            span{               
+                @include respond (phone){ 
+                    width: 2.5rem;
+                    height: 2.5rem;                   
+                }
+            }
+
+            span::after{                
+                @include respond (phone){ 
+                    width: 1rem;
+                    height: 1rem;
+                    top: .7rem;
+                    left: .7rem;                   
+                }
+            }
+        }
+        
+        &__bottom{
+            @include respond (phone){ 
+                flex-direction: column;               
+            }
+
+            & button{                
+                @include respond (phone){ 
+                    margin-bottom: 3rem;               
+                }
+            }           
+        }
+    }
+} 

@@ -1,0 +1,99 @@
+.footer{
+    display: flex;
+    flex-direction: column;
+    background: $color-black;    
+    
+
+    &__top{
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+        padding: 5rem 26.4rem;  
+    }
+
+    &__contact{
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+        
+        
+        & span{            
+            color: $color-white;        
+            font-size: 2.2rem;
+            margin-right: 5rem;         
+        }
+        
+        & .btn__payten{
+            margin-right: 2rem;
+        }
+    }
+    
+    &__bottom{        
+        border-top: 1px solid darken($color-gray, 50%);
+        color: $color-white;
+        padding: 2rem 26.4rem;      
+    }     
+}
+
+
+// MEDIA QUERIES
+
+.footer{    
+
+    &__top{
+        @include respond (desk-small){        
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-column-gap: 5rem;
+            padding: 5rem 6rem;
+        }       
+        
+        @include respond (phone){
+            display: block;
+            padding: 6rem;                       
+        }      
+    }
+
+    &__contact{       
+        @include respond (desk-small){
+            grid-column: 2/3;
+            justify-content: space-around;                                            
+        }
+
+        @include respond (tab-port){
+            display: flex;
+            flex-direction: column;
+        }
+
+        @include respond (phone){
+            align-items: flex-start;                       
+        }
+
+        & span{ 
+            @include respond (tab-port){
+                font-size: 2rem;
+            }
+            
+            @include respond (phone){
+                display: block;
+                margin-top: 3rem;
+                font-size: 1.9rem;                                             
+            }
+        }        
+    }
+    
+    &__bottom{
+         @include respond (desk-small){
+            font-size: 2rem;
+            text-align: center;
+        }
+        
+        @include respond (tab-port){
+            font-size: 1.7rem;
+            padding: 2rem 6rem;                                             
+        }
+    }     
+}
+
+
+

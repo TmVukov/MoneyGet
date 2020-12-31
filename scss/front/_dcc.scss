@@ -1,0 +1,210 @@
+.dcc{
+    background: url(../img/overlay-06@2x.png)  left/31% no-repeat, $color-black;
+
+
+    &__top{
+        @include grid;
+
+
+        &-left{
+            @include left;
+            position: relative;
+
+            
+            & h2{
+                @include h2;
+                display: flex;
+                flex-direction: column;               
+            }
+        
+            & h2::after{
+                content: url(../img/group2.png);                      
+            }
+
+            & .shape{
+                position: absolute;
+                top: -20rem;
+                background: $color-red;
+                width: 12rem;
+                height: 12rem;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;              
+            }
+    
+            & .shape2{
+                display: none;              
+            }
+        }
+    
+        &-right{
+            @include right;
+            
+
+            & p{
+                font-size: 2.8rem;        
+                line-height: 4.8rem;
+                color: $color-white;               
+            }
+        }      
+    }
+
+    &__bottom{
+        @include grid2;
+        border-top: 1px solid darken($color-gray, 50%);
+       
+
+        &-left{
+            @include left;
+            display: flex;            
+        }
+
+        &-right{
+            @include right;           
+        }
+
+        & h3{        
+            display: flex;
+            color: $color-white;
+            font-size: 3.4rem;
+            line-height: 1.2;           
+        }
+    
+        & img{                                         
+            margin-right: 2rem; 
+            height: 74px;                  
+        }
+        
+        & .btn{
+            background: $color-white;
+        }      
+    }   
+}
+
+
+
+// MEDIA QUERIES
+
+.dcc{
+    @include respond (desk-small){       
+        background: url(../img/overlay-06@2x.png)  center/cover no-repeat, $color-black;        
+    }
+
+    @include respond (tab-port){
+        background: url(../img/overlay-06@2x.png)  center/cover no-repeat, $color-black;           
+               
+    }
+
+    &__top{       
+        @include respond (desk-small){        
+            display: grid;
+            grid-template-columns: 50% 50%;
+            padding: 15rem 6rem;
+        }
+       
+
+        @include respond (tab-port){
+            display: flex;
+            flex-direction: column;
+            padding: 6rem;                 
+        }
+
+        &-left{
+            @include respond (desk-small){        
+                grid-column: 1/2;                
+            }
+            
+            & h2{    
+                @include respond (tab-port){             
+                    margin: 3rem 0;      
+                }
+            }
+        
+            & h2::after{    
+                @include respond (tab-port){
+                    display: none;                 
+                }        
+            }
+
+            & .shape{
+                @include respond (desk-small){        
+                    top: -21rem;
+                }
+                
+                @include respond (tab-port){
+                    display: none;                 
+                } 
+            }
+    
+            & .shape2{    
+                @include respond (tab-port){
+                    display: block;
+                    position: absolute;
+                    top: -10rem;                 
+                }
+            }
+        }
+    
+        &-right{
+            @include respond (desk-small){        
+                grid-column: 2/3;
+            }
+            
+
+            & p{                
+                @include respond (desk-small){        
+                    font-size: 2rem;
+                }
+                
+                @include respond (tab-port){       
+                    text-align: justify;       
+                }
+            }
+        }      
+    }
+
+    &__bottom{
+        @include respond (desk-small){        
+            display: grid;
+            grid-template-columns: 50% 50%;
+            padding: 15rem 6rem;
+        }
+
+        @include respond (tab-port){
+            display: flex;
+            justify-content: space-between;
+            align-items: center;            
+            padding: 6rem;       
+         }
+
+        @include respond (phone){
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;            
+                            
+        }
+
+        &-left{
+            @include respond (desk-small){        
+                grid-column: 1/2;                
+            }            
+            
+            @include respond (tab-port){             
+               display: block;       
+            }
+        }
+
+        &-right{
+            @include respond (desk-small){        
+                grid-column: 2/3;
+            }
+        }
+
+        & h3{             
+            @include respond (tab-port){             
+                margin: 3rem 0;      
+            }
+        }       
+    }   
+}

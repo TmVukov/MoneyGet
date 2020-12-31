@@ -1,0 +1,21 @@
+.google{
+    height: 74rem;
+    position: relative;    
+
+    @include respond (desk-small){             
+        height: 85rem;     
+    }    
+
+    & iframe{        
+        position: absolute;        
+        bottom: 16rem;
+        left: 26.5rem; 
+
+        @include respond (desk-small){  
+            width: 100%;
+            height: 100%;         
+            top:0;
+            left: 0;            
+        }
+    }
+}

@@ -1,0 +1,27 @@
+@import "modules/variables";
+@import "modules/mixins";
+
+@import "front/about";
+@import "front/base";
+@import "front/dcc";
+@import "front/header";
+@import "front/locations";
+@import "front/navigation";
+@import "front/partners";
+@import "front/footer";
+
+@import "components/boxes";
+@import "components/buttons";
+@import "components/confirmation";
+@import "components/form";
+
+@import "exchange/rates";
+@import "exchange/currency";
+
+@import "locations/atm";
+@import "locations/google";
+
+
+body{
+    overflow-x: hidden;    
+}

@@ -1,0 +1,131 @@
+.header{    
+    @include grid;    
+    background: url(../img/overlay-01@2x.png) left/26rem 80rem no-repeat, 
+                url(../img/overlay-02.png) right bottom no-repeat,
+                url(../img/overlay-03.png) right bottom no-repeat,
+                url(../img/image@2x.png) center/cover no-repeat;                
+    height: 80rem;    
+    position: relative; 
+    
+
+    &__left{ 
+        @include left;        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;                 
+    }
+
+    &__right{
+        @include right;          
+    }    
+    
+    &__heading{
+        color: $color-white;
+        font-size: 8.4rem;
+        line-height: 1.2;      
+    }
+
+    &__span{
+        color: $color-white;
+        font-size: 2.8rem;
+        font-weight: 400;   
+    } 
+
+    &__logo{
+        vertical-align: middle;
+        display: inline-block;
+    }    
+
+    & .pointer{
+        position: absolute;
+        bottom: -3rem;
+        left: 26rem;
+        background: $color-white;
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        text-decoration: none;        
+    }
+   
+}
+
+
+
+// MEDIA QUERIES
+
+.header{
+    @include respond (desk-small){        
+        background: url(../img/overlay-03.png) right bottom no-repeat,
+                    url(../img/image@2x.png) center/cover no-repeat;
+        padding: 6rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    @media (max-width:1215px){
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }    
+
+    @include respond (tab-small){
+        background: url(../img/background@2x.png) 0% 40%/cover no-repeat;        
+        display: flex;
+        flex-direction: column; 
+        align-items: flex-end;       
+    }
+    
+    @include respond (phone){ 
+        background: url(../img/background@2x.png) center/cover no-repeat;       
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;               
+    }    
+
+    &__left{       
+        @media (max-width:1215px){
+            display: block;
+        }           
+    }
+
+    &__right{
+        @include respond (tab-port){       
+            margin: 3rem 0;      
+        }     
+    }    
+    
+    &__heading{
+        @include respond (desk-small){
+            font-size: 7.5rem;
+        }
+
+        @include respond(phone-small){
+            font-size: 6.5rem;
+        }
+    }   
+
+    & .pointer{       
+        @include respond (tab-port){
+            display: none;     
+        }
+    }   
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

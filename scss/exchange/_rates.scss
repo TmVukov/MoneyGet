@@ -1,0 +1,210 @@
+.rates{
+    background: url(../img/overlay-08.png)  left no-repeat, $color-black;
+    display: flex;
+    flex-direction: column;     
+   
+
+    &__top{
+        display: flex;         
+        align-items: center;
+        justify-content: space-between;
+        padding: 5rem 26.4rem;       
+        
+        &-left{
+            display: flex;            
+        }       
+    }
+    
+    &__bottom{        
+        border-top: 1px solid darken($color-gray, 30%);
+        color: $color-white;
+        padding: 2rem 26.4rem;
+        display: flex;         
+        
+        &-right,
+        &-left{
+            display: flex;
+            flex-direction: column;
+            padding: 0 8rem;            
+        }        
+
+        &-left{            
+            padding-left: 0;
+            border-right: 1px solid darken($color-gray, 30%);            
+        }
+    }  
+       
+
+    & h1{ 
+        font-size: 6rem;
+        line-height: 1.2;              
+        color: $color-white;      
+    }
+
+    & .icon__arrows{                                             
+        margin-right: 4rem; 
+        transform: scale(.9);
+        height: 140px;          
+    }
+
+    & .icon__arrows-medium{  
+        display: none;       
+    }
+    
+    & label{
+        font-size: 2.4rem;
+        text-transform: uppercase;
+    }
+
+    & span{
+        font-size: 3.4rem;       
+    }    
+
+    & select{ 
+        appearance: none;            
+        background: url(../img/button.png) 95% center no-repeat, none;       
+        display: inline-block;
+        border: 1px solid darken($color-gray, 50%);
+        border-radius: 4px; 
+        padding: 1.5rem 2.8rem;        
+        color: $color-white;
+        font-size: 2rem;              
+    }   
+
+    & option{
+        background: $color-black;
+    }   
+}
+
+
+
+// MEDIA QUERIES
+
+.rates{ 
+    &__top{        
+        @include respond (desk-small){        
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-column-gap: 5rem;            
+            justify-items: center;            
+            padding: 5rem;
+        } 
+        
+        @include respond (tab-port){
+            justify-items: flex-start;
+            padding: 3rem 5rem; 
+        }
+
+        @include respond (tab-small){
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 3rem;                       
+        }
+        
+        &-left{            
+            @include respond (desk-small){ 
+                grid-column: 1/2;
+            }            
+            
+            @include respond(tab-small){
+                display: flex;
+                flex-direction: column;                              
+            }
+        }
+
+        & .box{
+            @include respond (desk-small){ 
+                grid-column: 2/3;                
+            } 
+        }
+    }
+    
+    &__bottom{ 
+        @include respond (desk-small){        
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-column-gap: 5rem;            
+            justify-items: center;                        
+            padding: 5rem;
+        }
+
+        @include respond (tab-port){
+            justify-items: flex-start;
+            padding: 3rem 5rem;
+        }
+
+        @include respond (tab-small){
+            display: flex;
+            justify-content: space-between;
+            padding: 3rem;                       
+        }
+        
+        @include respond (phone){
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;                      
+        }
+        
+        &-right,
+        &-left{
+            @include respond (phone){
+                padding: 0;
+                margin-top: 3rem;                
+            }
+        }
+
+        &-right{
+            @include respond (desk-small){ 
+                grid-column: 2/3;                
+            }
+        }
+
+        &-left{
+            @include respond (desk-small){                
+                border: none;                
+            }
+        }
+    }  
+       
+
+    & h1{       
+        @include respond (tab-port){
+            font-size: 5rem;
+            margin: 2rem 0;
+        }
+    }
+
+    & .icon__arrows{
+        @include respond (desk-small){
+            margin-right: 2rem;                
+        }
+
+        @include respond (tab-port){
+            display: none;                
+        }       
+    }
+
+    & .icon__arrows-medium{
+        @include respond (tab-port){
+            display: block;
+            width: 70px;
+            height: 70px;
+            margin-right: 3rem;                
+        }        
+    }    
+
+    & span{        
+        @include respond (tab-small){
+            font-size: 3rem;
+        }
+    }    
+
+    & select{        
+        @include respond (desk-small){
+            max-width: 40rem;
+            min-width: 30rem;
+        }
+    }    
+}
+

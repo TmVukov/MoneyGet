@@ -1,0 +1,157 @@
+.locations{
+    background: $color-white;
+
+    &__top{
+        @include grid;    
+        background: url(../img/map.png) left no-repeat,
+                    url(../img/overlay-07.png) right/20% 105% no-repeat;
+    
+
+        &-left{
+            @include left; 
+            display: flex;           
+
+            & h2{
+                @include h2;
+                color: $color-black !important; 
+                margin: 2rem;               
+            }
+            
+            & .spot__icon{
+                height: 140px;          
+            }
+
+            & .spot__icon-medium{
+                display: none;               
+            }
+        }
+
+        &-right{
+            @include right;                         
+
+            & p{
+                font-size: 2.8rem;        
+                line-height: 4.8rem;
+                color: $color-gray-dark; 
+                margin-bottom: 7rem;
+                text-align: left;
+                display: block;
+                width: 100%;              
+            }
+    
+            & .btn{
+                border: 1px solid $color-red;
+            }     
+        }          
+    }
+    
+
+    &__bottom{ 
+        @include grid2;                  
+        border-top: 1px solid darken($color-gray, 50%);
+                
+                      
+        &-left{
+            @include left;            
+        }        
+    
+        & a{
+            display: flex;
+            align-items: center;
+            text-decoration: none;            
+            height: 74px;                       
+        }
+
+        & h3{            
+            color: $color-black;
+            font-size: 3.4rem;
+            margin-left: 2rem;
+            transition: color .2s;                   
+        }
+
+        & h3:hover{
+            color: $color-red;
+        }
+    }    
+}
+
+
+// MEDIA QUERIES
+
+.locations{  
+
+    &__top{        
+
+        @include respond (desk-small){ 
+            background: url(../img/map.png) center/cover no-repeat;                  
+            display: grid;
+            grid-template-columns: 50% 50%;
+            padding: 15rem 6rem;
+        }            
+
+        @include respond (tab-port){
+            background: url(../img/map.png) center/cover no-repeat;
+            display: block; 
+            padding: 6rem;                   
+        }
+
+        &-left{
+            @include respond (desk-small){        
+                grid-column: 1/2;                
+            }             
+            
+            @include respond (tab-port){                
+                display: block;                                   
+            }
+
+            & h2{                
+                @include respond (tab-port){                
+                    margin: 3rem 0;                                   
+                }
+            }
+            
+            & .spot__icon{
+                @include respond (tab-port){                
+                    display: none;                                   
+                }
+            }
+
+            & .spot__icon-medium{
+                @include respond (tab-port){                
+                    display: block;                                   
+                }
+            }
+        }
+
+        &-right{
+            @include respond (desk-small){        
+                grid-column: 2/3;
+            }
+
+            & p{                
+                @include respond (desk-small){        
+                    font-size: 2rem;
+                }
+                
+                @include respond (tab-port){                
+                    margin-bottom: 3rem;
+                    text-align: justify;                                   
+                }
+            }            
+        }          
+    }
+    
+
+    &__bottom{        
+        @include respond (desk-small){        
+            display: block;
+            padding: 5rem 6rem;
+        }
+
+        @include respond (tab-port){
+            display: block;            
+            padding: 6rem;                   
+        }   
+    }    
+}
+
